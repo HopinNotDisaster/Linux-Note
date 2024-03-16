@@ -1,17 +1,15 @@
 import random
-
 import pymysql
 import redis
 
+# 下面注释的是生成数据的代码。
 # con = pymysql.connect(user='root',password='123456')
 # con.select_db('qiku')
 # cur = con.cursor()
-#
 # # sql = "create table comment (id int primary key not null auto_increment," \
 # #       "score int default 0, " \
 # #       "create_time datetime default current_timestamp)"
 # # cur.execute(sql)
-#
 #
 # # 插入一万个数据
 # sql = "insert into comment (score) values (%s)"
@@ -51,9 +49,9 @@ def get_comments_top10():
     client.close()
     return datas
 
-
 if __name__ == '__main__':
     result = get_comments_top10()
     print(result)  # 格式是一个大元组，里面是每一个小的元组！
 
+# 输出格式展示！
 # ((10001, 3), (10002, 4), (10003, 4), (10004, 4), (10005, 2), (10006, 3), (10007, 4), (10008, 2), (10009, 5), (10010, 4))
